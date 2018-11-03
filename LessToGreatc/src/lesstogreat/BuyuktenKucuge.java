@@ -49,7 +49,7 @@ public class BuyuktenKucuge {
         allCut:
         while (devam){
             
-            anlasilmadi = false;
+            anlasilmadi = true;
             isNumber = false;
             
             while(!isNumber){
@@ -123,7 +123,7 @@ public class BuyuktenKucuge {
              * anlasilmadi = true ise anlaşılmamıştır tam tersinde anlaşılmıştır.
             */
             cut:
-            while (!anlasilmadi) {
+            while (anlasilmadi) {
                 //2 sayıdan sonra devam edip etmeyeceğimizi sorar
                 if (i%2 == 0){
                     System.out.print("\nDevam edilecek mi? (Y or N): ");
@@ -152,9 +152,8 @@ public class BuyuktenKucuge {
                             System.out.println("Anlaşılmadı.");
                     }
                 }else{
-                    //2 sayıdan 2. sini girmediğimizde loopun baştan sarması için.
-                    //Bunu kaldırsam da olur, çünkü ben ellemedikçe true olacak.
-                    anlasilmadi = true;
+                    //2 sayıdan 2. sini girmediğimizde Tamam-Devam loopunu bitirmek için.
+                    anlasilmadi = false;
                 }
             }
             i++;
