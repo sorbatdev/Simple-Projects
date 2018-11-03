@@ -9,25 +9,26 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
+ * Kodu yazarken bazı değişken isimlerini ingilizce yaptım çünkü bir işlemin,
+ * nasıl olması gerektiğini düşünürken ingilizce düşünmem gerekebiliyor.
+ * yoksa İngiliz uşağı değilim.
+ *
  * @version 1.0
  * @author kayra
  */
 public class BuyuktenKucuge {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         LinkedList <Integer> liste = new LinkedList<>();
         Scanner giris;
         
-        //Başka bir koda implement ederken bunları kopyala:
+        //Bu değişkenler Tamam-Devam sistemi için
         int i = 1;
         boolean devam = true;
         Scanner check = new Scanner(System.in);
         String devamMi;
         boolean anlasilmadi = false;
-        //Buraya kadar.
+        
         
         
         int recentNum = 0;
@@ -117,11 +118,9 @@ public class BuyuktenKucuge {
             }
             
             
-            
-            //Tamam-devam kontrol
-            
             /*
-             * Burdaki anlasilmadi olayı 
+             * Burdaki anlasilmadi olayı "Tamam-Devam" sistemidir.
+             * anlasilmadi = true ise anlaşılmamıştır tam tersinde anlaşılmıştır.
             */
             cut:
             while (!anlasilmadi) {
