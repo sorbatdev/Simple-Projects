@@ -1,6 +1,5 @@
 /*
- * Kullandığım algoritma tamamen bana aittir ve dershaneye giderken,
- * yolda aklıma gelmiştir.
+ * Kullandığım algoritma bana aittir.
  */
 package lesstogreat;
 
@@ -9,10 +8,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * Kodu yazarken bazı değişken isimlerini ingilizce yaptım çünkü bir işlemin,
- * nasıl olması gerektiğini düşünürken ingilizce düşünmem gerekebiliyor.
- * yoksa İngiliz uşağı değilim.
- *
  * @version 1.0
  * @author kayra
  */
@@ -22,13 +17,11 @@ public class BuyuktenKucuge {
         LinkedList <Integer> liste = new LinkedList<>();
         Scanner giris;
         
-        //Bu değişkenler Tamam-Devam sistemi için
         int i = 1;
         boolean devam = true;
         Scanner check = new Scanner(System.in);
         String devamMi;
         boolean anlasilmadi = false;
-        
         
         
         int recentNum = 0;
@@ -92,11 +85,13 @@ public class BuyuktenKucuge {
             
             //3.Sayıdan sonra artık sayının yerini bulmak için:
             else if (recentNum > smallestNum && recentNum < biggestNum){
+                System.out.println("Şimdi buradayım");
                 //Girdiğimiz sayıyı sırayla listenin başından başlayarak büyük mü değil mi karşılaştırır.
                 while(recentNum > liste.get(j)){
                     j++;
+                    
                 }
-                
+                System.out.println("Baktım, büyük değilim" + j);
                 /*
                 * Büyük olmadığı bir ana gelince (bu durum eşitlikte olabilir) eğer sayımız,
                 * listemizin bulunduğumuz kısmındaki (j indeksi) sayıya eşitse
@@ -104,23 +99,30 @@ public class BuyuktenKucuge {
                 * Eğer değilse, yani o kısımda eşit bir sayı bulunmuyorsa, j indeksine sayımızı atar,
                 * ve j' yi 0 eşitler ki işlem tekrarlanabilsin.
                 */
-                if(recentNum == liste.get(j)){
+                if(recentNum == liste.get(j+1)){
                     liste.add(j, recentNum);
+                    System.out.println("Başarılı");
                 }else{
                     liste.add(j, recentNum);
                     j = 0;
+                    System.out.println("Eklendi");
                 }
             }
             //Bu kısmı ekledim çünkü en baştaki sayıyı her nedense algılamıyordu.
-            //Bununla en küçük sayı girilen sayıyla eşitse inputğimiz sayıyı en küçüğün yanına ekler.
+            //Bununla en küçük sayı-en büyük sayı girilen sayıyla eşitse girdiğimiz sayıyı en küçüğün yanına ekler.
             else if(recentNum == smallestNum){
-                liste.add(0, recentNum);
+                liste.addFirst(recentNum);
+            }
+            else if(recentNum == biggestNum){
+                liste.addLast(recentNum);
             }
             
             
+            
+            //Tamam-devam kontrol
+            
             /*
-             * Burdaki anlasilmadi olayı "Tamam-Devam" sistemidir.
-             * anlasilmadi = true ise anlaşılmamıştır tam tersinde anlaşılmıştır.
+             * Burdaki anlasilmadi olayı 
             */
             cut:
             while (anlasilmadi) {
@@ -152,7 +154,8 @@ public class BuyuktenKucuge {
                             System.out.println("Anlaşılmadı.");
                     }
                 }else{
-                    //2 sayıdan 2. sini girmediğimizde Tamam-Devam loopunu bitirmek için.
+                    //2 sayıdan 2. sini girmediğimizde loopun baştan sarmaması için.
+                    //Bunu kaldırsam da olur, çünkü ben ellemedikçe true olacak.
                     anlasilmadi = false;
                 }
             }
