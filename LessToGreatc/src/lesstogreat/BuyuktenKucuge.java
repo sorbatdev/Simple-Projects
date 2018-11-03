@@ -8,7 +8,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
- * @version 1.0
+ * @version 1.2
  * @author kayra
  */
 public class BuyuktenKucuge {
@@ -85,13 +85,11 @@ public class BuyuktenKucuge {
             
             //3.Sayıdan sonra artık sayının yerini bulmak için:
             else if (recentNum > smallestNum && recentNum < biggestNum){
-                System.out.println("Şimdi buradayım");
                 //Girdiğimiz sayıyı sırayla listenin başından başlayarak büyük mü değil mi karşılaştırır.
                 while(recentNum > liste.get(j)){
                     j++;
                     
                 }
-                System.out.println("Baktım, büyük değilim" + j);
                 /*
                 * Büyük olmadığı bir ana gelince (bu durum eşitlikte olabilir) eğer sayımız,
                 * listemizin bulunduğumuz kısmındaki (j indeksi) sayıya eşitse
@@ -101,11 +99,9 @@ public class BuyuktenKucuge {
                 */
                 if(recentNum == liste.get(j+1)){
                     liste.add(j, recentNum);
-                    System.out.println("Başarılı");
                 }else{
                     liste.add(j, recentNum);
                     j = 0;
-                    System.out.println("Eklendi");
                 }
             }
             //Bu kısmı ekledim çünkü en baştaki sayıyı her nedense algılamıyordu.
