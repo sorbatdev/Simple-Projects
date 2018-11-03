@@ -1,0 +1,10 @@
+Kodu çalıştırabilmek için:
+1- Yeni bi dosya açıp içine kodu at.
+2- Kodu attığın yerde cmd (Command Prompt)' yi aç.
+[Dosyanın içinde boş yerde(Java dosyasının üstüne değil) Shift+Sağ klik yap. Böylece cmd dosya içinde açılır.)
+3- JDK dosyaların her neredeyse o kısmı değiştirerek cmd' ye şunu yaz:
+         "set path=%path%;C:\Program Files\Java\jdk1.8.0_151\bin"
+   Sırayla şunları yaz
+4- "javac BuyuktenKucuge.java"
+5- "java BuyuktenKucuge"
+6- Ve uygulamayı kullan!!
