@@ -21,7 +21,7 @@ public class Goruntu extends JPanel{
 
     @Override
     protected void paintComponent(Graphics g) {
-        super.paintComponent(g); //To change body of generated methods, choose Tools | Templates.
+        super.paintComponent(g);
         Pong.pong.render((Graphics2D)g);
     }
     
